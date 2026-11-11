@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O.B Ellis – Graphic Designer &amp; AI Content Creator</title>
+<meta name="description" content="Portfolio of O.B Ellis, graphic designer and AI content creator.">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/video-player.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/media/mux-video.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/container.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/controls.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/controls-content.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/controls-group.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/play-button.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/time-slider.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/volume-slider.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/slider-track.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/slider-buffer.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/slider-fill.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/slider-thumb.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/time.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/time-group.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/time-separator.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/mute-button.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/fullscreen-button.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/hotkey.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/status-announcer.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/error-dialog.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/dialog-popup.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/dialog-title.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/dialog-description.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.3.0/ui/dialog-close.js"></script>
+<style>
+:root{--ink:#14100c;--cream:#f3e6c8;--amber:#e8a33d}
+*{box-sizing:border-box}
+body{margin:0;padding:24px 16px 40px;background:var(--ink);color:var(--cream);font-family:Georgia,"Times New Roman",serif}
+.wrap{max-width:560px;margin:0 auto}
+header.site{text-align:center;padding:8px 0}
+h1{margin:0;font-size:2.2rem;letter-spacing:.12em}
+.role{margin:8px 0 0;opacity:.85;letter-spacing:.06em}
+.bio{line-height:1.6;margin:24px auto 0;text-align:center}
+h2{font-size:1.15rem;letter-spacing:.08em;text-align:center;margin:36px 0 14px}
+.note{line-height:1.6;opacity:.9;text-align:center;margin:18px auto 0}
+footer{text-align:center;margin-top:44px;opacity:.7;font-size:.85rem}
+
+.groove{position:relative;display:block;max-width:420px;margin:0 auto;border:2px solid var(--amber);border-radius:16px;overflow:hidden;background:#000}
+.groove video,.groove mux-video{display:block;width:100%;aspect-ratio:9/16}
+.groove:fullscreen video,.groove:fullscreen mux-video{width:100%;height:100%;aspect-ratio:auto}
+.groove:fullscreen{max-width:none;border:0;border-radius:0}
+.groove-controls{position:absolute;inset:auto 0 0;padding:12px 14px 14px;color:var(--cream);background:linear-gradient(to top,rgb(20 16 12 / .95),rgb(20 16 12 / .6) 60%,transparent);transition:opacity .25s}
+.groove-controls:not([data-visible]):not(:has(:focus-visible)){opacity:0}
+.groove :focus-visible{outline:3px solid var(--cream);outline-offset:3px}
+
+.groove-slider{position:relative;display:flex;align-items:center;height:28px;cursor:pointer}
+.groove-track{position:relative;width:100%;height:8px;border-radius:9999px;background:repeating-linear-gradient(90deg,#2b241c 0 3px,#3a3126 3px 4px)}
+.groove-buffer,.groove-fill{position:absolute;top:0;bottom:0;left:0;border-radius:inherit}
+.groove-buffer{width:var(--media-slider-buffer);background:rgb(243 230 200 / .25)}
+.groove-fill{width:var(--media-slider-fill);background:var(--amber)}
+.groove-thumb{position:absolute;left:var(--media-slider-fill);width:20px;height:20px;border-radius:50%;background:var(--amber);border:3px solid var(--cream);translate:-50% 0}
+
+.groove-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:6px}
+.groove-play{position:relative;flex:none;width:56px;height:56px;padding:0;border:0;background:none;cursor:pointer}
+.groove-play::before{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 2px var(--amber);
+  background:
+   radial-gradient(circle closest-side,var(--amber) 0 44%,#0c0a08 45% 48%,transparent 49%),
+   conic-gradient(from 0deg,transparent,rgb(255 255 255 / .16) 8%,transparent 18%,transparent 50%,rgb(255 255 255 / .16) 58%,transparent 68%),
+   repeating-radial-gradient(circle closest-side,#1c1814 0 2px,#2d261e 3px 4px)}
+.groove-play:not([data-paused])::before{animation:spin 3s linear infinite}
+.groove-play::after{content:"\25B6";position:absolute;inset:0;display:grid;place-items:center;padding-left:2px;font-size:13px;line-height:1;color:var(--ink)}
+.groove-play:not([data-paused])::after{content:"\275A\275A";padding-left:0;letter-spacing:-1px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.groove-arm{position:absolute;top:-2px;left:62px;width:4px;height:42px;border-radius:2px;background:var(--cream);transform-origin:50% 2px;transition:transform .6s ease;pointer-events:none}
+.groove-arm::after{content:"";position:absolute;left:-3px;top:-3px;width:10px;height:10px;border-radius:50%;background:var(--amber)}
+.groove-play[data-paused] .groove-arm{transform:rotate(-6deg)}
+.groove-play:not([data-paused]) .groove-arm{transform:rotate(28deg)}
+
+.groove-time{display:flex;align-items:center;gap:4px;font-variant-numeric:tabular-nums}
+.groove-btn{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 12px;border:2px solid var(--cream);border-radius:9999px;background:rgb(20 16 12 / .6);color:var(--cream);font:inherit;font-size:.9rem;cursor:pointer}
+.groove-mute{margin-left:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.groove-vol-row{display:flex;align-items:center;gap:12px;margin-top:6px}
+.groove-vol-label{flex:none;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+.groove-vol{position:relative;display:flex;align-items:center;flex:1;height:32px;cursor:pointer}
+
+.groove-play:not([data-paused]) .show-when-paused,
+.groove-play[data-paused] .show-when-playing,
+.groove-mute:not([data-muted]) .show-when-muted,
+.groove-mute[data-muted] .show-when-unmuted,
+.groove-full:not([data-fullscreen]) .show-when-fullscreen,
+.groove-full[data-fullscreen] .show-when-not-fullscreen{display:none}
+
+.groove-error{position:absolute;inset:0;display:grid;gap:12px;place-content:center;padding:24px;background:rgb(20 16 12 / .92);text-align:center}
+.groove-error:not([data-open]){display:none}
+
+@media (prefers-reduced-motion:reduce){
+  .groove-play::before{animation:none!important}
+  .groove-arm{transition:none}
+  .groove-controls{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <h1>O.B Ellis</h1>
+    <p class="role">Graphic Designer &amp; AI Content Creator</p>
+  </header>
+
+  <p class="bio">I'm a graphic designer who also creates AI-generated content. This site shows a recent project: a custom video player design.</p>
+
+  <h2>Featured project: Groove</h2>
+
+  <video-player>
+    <media-container class="groove">
+      <mux-video src="https://stream.mux.com/wVZLq3Fvkp3dNpo01V8Gvr7E23ZofCMXbLS02SMmK01bt8.m3u8" playsinline crossorigin="anonymous"></mux-video>
+
+      <media-controls>
+        <media-controls-content class="groove-controls">
+          <media-time-slider class="groove-slider">
+            <media-slider-track class="groove-track">
+              <media-slider-buffer class="groove-buffer"></media-slider-buffer>
+              <media-slider-fill class="groove-fill"></media-slider-fill>
+            </media-slider-track>
+            <media-slider-thumb class="groove-thumb"></media-slider-thumb>
+          </media-time-slider>
+
+          <media-controls-group class="groove-row" aria-label="Playback controls">
+            <media-play-button class="groove-play">
+              <span class="sr show-when-paused">Play</span>
+              <span class="sr show-when-playing">Pause</span>
+              <span class="groove-arm" aria-hidden="true"></span>
+            </media-play-button>
+
+            <media-time-group class="groove-time">
+              <media-time type="current"></media-time>
+              <media-time-separator></media-time-separator>
+              <media-time type="duration"></media-time>
+            </media-time-group>
+
+            <media-mute-button class="groove-btn groove-mute">
+              <span class="show-when-muted">Unmute</span>
+              <span class="show-when-unmuted">Mute</span>
+            </media-mute-button>
+
+            <media-fullscreen-button class="groove-btn groove-full">
+              <span class="show-when-fullscreen">Exit</span>
+              <span class="show-when-not-fullscreen">Full</span>
+            </media-fullscreen-button>
+          </media-controls-group>
+
+          <div class="groove-vol-row">
+            <span class="groove-vol-label" aria-hidden="true">Vol</span>
+            <media-volume-slider class="groove-vol">
+              <media-slider-track class="groove-track">
+                <media-slider-fill class="groove-fill"></media-slider-fill>
+              </media-slider-track>
+              <media-slider-thumb class="groove-thumb"></media-slider-thumb>
+            </media-volume-slider>
+          </div>
+        </media-controls-content>
+      </media-controls>
+
+      <media-hotkey keys="Space" action="togglePaused"></media-hotkey>
+      <media-hotkey keys="m" action="toggleMuted"></media-hotkey>
+      <media-hotkey keys="f" action="toggleFullscreen"></media-hotkey>
+      <media-hotkey keys="ArrowLeft" action="seekStep" value="-5"></media-hotkey>
+      <media-hotkey keys="ArrowRight" action="seekStep" value="5"></media-hotkey>
+      <media-hotkey keys="ArrowUp" action="volumeStep" value="0.05"></media-hotkey>
+      <media-hotkey keys="ArrowDown" action="volumeStep" value="-0.05"></media-hotkey>
+      <media-status-announcer></media-status-announcer>
+
+      <media-error-dialog>
+        <media-dialog-popup class="groove-error">
+          <media-dialog-title></media-dialog-title>
+          <media-dialog-description></media-dialog-description>
+          <media-dialog-close></media-dialog-close>
+        </media-dialog-popup>
+      </media-error-dialog>
+    </media-container>
+  </video-player>
+
+  <p class="note">Groove is a vinyl-inspired video player skin I designed for the Video.js Skins Design Challenge. The play button is a spinning record, a tonearm drops onto it when playback starts, and the seek bar is a grooved track.</p>
+
+  <footer>&copy; 2026 O.B Ellis</footer>
+</div>
+</body>
+                                                                                                  </html>
